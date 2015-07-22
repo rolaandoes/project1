@@ -13,9 +13,10 @@ $(function(){
         var postInfo = "info"
         var url = data.data.children[i].data.url;
         var $htmlTemplate = $(template({title:postTitle, link:url, info:postInfo, _id:"0"}))
-        console.log($htmlTemplate)
+        // console.log($htmlTemplate)
          // $("kind").attr("data", item.data.title).append("#titles")
        $("#titles").append($htmlTemplate);
+       $("#link").append(url);
        // var $postHtml = $(compiled.template(post));
        // $('#titles').append($postHtml);
       });

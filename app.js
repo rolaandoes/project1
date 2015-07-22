@@ -3,7 +3,7 @@ var silent = true;
 var express = require('express');
 var bodyParser = require('body-parser');
 var errorHandler = require('errorhandler');
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 var session = require('express-session');
 var User = ('./models/user');
 
@@ -57,11 +57,11 @@ app.get('/', function (req, res) {
 //SET UP MONGOOSE
 //--------------------------
 
-mongoose.connect(
-  process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://localhost/project1' // plug in the db name you've been using
-);
+// mongoose.connect(
+//   process.env.MONGOLAB_URI ||
+//   process.env.MONGOHQ_URL ||
+//   'mongodb://localhost/project1' // plug in the db name you've been using
+// );
 
 
 // Open server on specified port
