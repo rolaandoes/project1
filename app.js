@@ -4,10 +4,11 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var errorHandler = require('errorhandler');
 var mongoose = require('mongoose');
-var session = require('express-session')
+var session = require('express-session');
+var User = ('./models/user');
 
 var app = express();
-var root = __dirname + '/public/';
+// var root = __dirname + '/public/';
 
 
 
@@ -15,32 +16,43 @@ var root = __dirname + '/public/';
 // SET UP EXPRESS
 // --------------------------------------------------------------------
 
+// Serve static files from directory
+app.use(express.static(__dirname + '/public/'));
+
 // Parse application/json and application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 // app.use(bodyParser.json());
-
-// Simple logger
-// app.use(function(req, res, next){
-//   console.log("%s %s", req.method, req.url);
-//   console.log(req.body);
-//   next();
-// });
-
-// Error handler
-// app.use(errorHandler({
-//   dumpExceptions: true,
-//   showStack: true
+//SET SESSION OPTIONS
+// app.use(session({
+//   saveUninitialized:true,
+//   resave: true,
+//   secret: 'SuperSecretCookie',
+//   cookie: {maxAge:6000}
 // }));
-
-// Serve static files from directory
-app.use(express.static(__dirname + '/public/'));
+// //MIDDLEWARE TO MANAGE SESSIONS
+// app.use('/', function(req, res, next){
+//   //saves userID for session
+//   req.login = function (user){
+//     req.session.userID = user.id;
+//   };
+// });
+// //FINDS LOGGED IN USER BY 'SESSION.USERID'
+// req.currentUser = function(callback) {
+//   User.fincOne({_id: req.session.userid}, function(err, user){
+//     req.user = user;
+//     callback(null, user);
+//   });
+// };
+//DESTROY 
 
 // root route (serves index.html)
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/views/index.html');
 });
+
+
 //--------------------------
 //SET UP MONGOOSE
 //--------------------------
@@ -48,8 +60,9 @@ app.get('/', function (req, res) {
 mongoose.connect(
   process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
-  'mongodb://localhost/YOUR_LOCAL_DATABASE_NAME' // plug in the db name you've been using
+  'mongodb://localhost/project1' // plug in the db name you've been using
 );
+
 
 // Open server on specified port
 // if (!silent) console.log("Starting Express server");

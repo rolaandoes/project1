@@ -11,7 +11,8 @@ $(function(){
         // console.log(data.data.children[i].data.title);
         var postTitle = data.data.children[i].data.title;
         var postInfo = "info"
-        var $htmlTemplate = $(template({title:postTitle, info:postInfo, _id:"0"}))
+        var url = data.data.children[i].data.url;
+        var $htmlTemplate = $(template({title:postTitle, link:url, info:postInfo, _id:"0"}))
         console.log($htmlTemplate)
          // $("kind").attr("data", item.data.title).append("#titles")
        $("#titles").append($htmlTemplate);
