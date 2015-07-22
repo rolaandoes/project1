@@ -1,0 +1,25 @@
+{
+  "name": "project1",
+  "version": "1.0.0",
+  "description": "Project1 subreddit feed webapp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "subreddit",
+    "feed",
+    "project1"
+  ],
+  "author": "rolaandoes",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "ejs": "^2.3.3",
+    "errorhandler": "^1.4.1",
+    "express": "^4.13.1",
+    "express-session": "^1.11.3",
+    "mongoose": "^4.0.7",
+    "pusher": "^1.0.6"
+  }
+}
