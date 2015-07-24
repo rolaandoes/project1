@@ -17,12 +17,15 @@
   "dependencies": {
     "bcrypt": "^0.8.3",
     "body-parser": "^1.13.2",
+    "chai": "^3.2.0",
     "cors": "^2.7.1",
     "ejs": "^2.3.3",
     "errorhandler": "^1.4.1",
     "express": "^4.13.1",
     "express-session": "^1.11.3",
+    "mocha": "^2.2.5",
     "mongoose": "^4.0.8",
-    "pusher": "^1.0.6"
+    "pusher": "^1.0.6",
+    "request": "^2.60.0"
   }
 }
