@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node app.js"
+    "start": "node app.js"
   },
   "keywords": [
     "subreddit",
@@ -16,11 +16,12 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.13.2",
+    "cors": "^2.7.1",
     "ejs": "^2.3.3",
     "errorhandler": "^1.4.1",
     "express": "^4.13.1",
     "express-session": "^1.11.3",
-    "mongoose": "^4.0.7",
+    "mongoose": "^4.0.8",
     "pusher": "^1.0.6"
   }
 }
